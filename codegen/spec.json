@@ -1,0 +1,4083 @@
+{
+  "api_version": "2026-08-21",
+  "services": [
+    {
+      "namespace": "",
+      "property": "accountCapabilities",
+      "class": "AccountCapabilityService",
+      "resource": "AccountCapability",
+      "doc": "https://www.airwallex.com/docs/api/account_capability/account_capability",
+      "methods": [
+        {
+          "name": "enable",
+          "http": "POST",
+          "path": "/api/v1/account_capabilities/{id}/enable",
+          "summary": "Enable an account capability",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allFundingLimits",
+          "http": "GET",
+          "path": "/api/v1/account_capabilities/funding_limits",
+          "summary": "List funding limits",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/account_capabilities/{id}",
+          "summary": "Retrieve an account capability",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "accounts",
+      "class": "AccountService",
+      "resource": "Account",
+      "doc": "https://www.airwallex.com/docs/api/scale/accounts",
+      "methods": [
+        {
+          "name": "agreeToTerms",
+          "http": "POST",
+          "path": "/api/v1/accounts/{id}/terms_and_conditions/agree",
+          "summary": "Agree to terms and conditions",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounts/create",
+          "summary": "Create an account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "createAmendment",
+          "http": "POST",
+          "path": "/api/v1/account/amendments/create",
+          "summary": "Create an account amendment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveCurrent",
+          "http": "GET",
+          "path": "/api/v1/account",
+          "summary": "Retrieve account details",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounts",
+          "summary": "List all connected accounts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "reactivate",
+          "http": "POST",
+          "path": "/api/v1/accounts/{id}/reactivate",
+          "summary": "Reactivate an account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounts/{id}",
+          "summary": "Retrieve an account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveAmendment",
+          "http": "GET",
+          "path": "/api/v1/account/amendments/{amendment_id}",
+          "summary": "Retrieve an account amendment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveWalletInfo",
+          "http": "GET",
+          "path": "/api/v1/account/wallet_info",
+          "summary": "Retrieve account wallet information",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "submit",
+          "http": "POST",
+          "path": "/api/v1/accounts/{id}/submit",
+          "summary": "Submit an account for activation",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "suspend",
+          "http": "POST",
+          "path": "/api/v1/accounts/{id}/suspend",
+          "summary": "Suspend an account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/accounts/{id}/update",
+          "summary": "Update a connected account",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "authentication",
+      "class": "AuthenticationService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/authentication/embedded_components",
+      "methods": [
+        {
+          "name": "authorize",
+          "http": "POST",
+          "path": "/api/v1/authentication/authorize",
+          "summary": "Authorize an Account",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "balances",
+      "class": "BalanceService",
+      "resource": "Balance",
+      "doc": "https://www.airwallex.com/docs/api/core_resources/balances",
+      "methods": [
+        {
+          "name": "current",
+          "http": "GET",
+          "path": "/api/v1/balances/current",
+          "summary": "Retrieve current balances",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "history",
+          "http": "GET",
+          "path": "/api/v1/balances/history",
+          "summary": "Retrieve balance history",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "beneficiaries",
+      "class": "BeneficiaryService",
+      "resource": "Beneficiary",
+      "doc": "https://www.airwallex.com/docs/api/payouts/beneficiaries",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/beneficiaries/create",
+          "summary": "Create a beneficiary",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/beneficiaries/{id}/delete",
+          "summary": "Delete a beneficiary",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "generateApiSchema",
+          "http": "POST",
+          "path": "/api/v1/beneficiary_api_schemas/generate",
+          "summary": "Generate beneficiary API schema",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "generateFormSchema",
+          "http": "POST",
+          "path": "/api/v1/beneficiary_form_schemas/generate",
+          "summary": "Generate beneficiary form schema",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/beneficiaries",
+          "summary": "List beneficiaries",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allSupportedFinancialInstitutions",
+          "http": "GET",
+          "path": "/api/v1/beneficiary_form_schemas/supported_financial_institutions",
+          "summary": "Get supported financial institutions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/beneficiaries/{id}",
+          "summary": "Retrieve a beneficiary",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/beneficiaries/{id}/update",
+          "summary": "Update a beneficiary",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "validate",
+          "http": "POST",
+          "path": "/api/v1/beneficiaries/validate",
+          "summary": "Validate a beneficiary",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "verifyAccount",
+          "http": "POST",
+          "path": "/api/v1/beneficiaries/verify_account",
+          "summary": "Verify a beneficiary account",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "charges",
+      "class": "ChargeService",
+      "resource": "Charge",
+      "doc": "https://www.airwallex.com/docs/api/scale/charges",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/charges/create",
+          "summary": "Create a charge against a connected account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/charges",
+          "summary": "List charges",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/charges/{id}",
+          "summary": "Retrieve a charge",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "confirmationLetters",
+      "class": "ConfirmationLetterService",
+      "resource": "ConfirmationLetter",
+      "doc": "https://www.airwallex.com/docs/api/confirmation_letter/confirmation_letter",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/confirmation_letters/create",
+          "summary": "Create a confirmation letter",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "connectedAccountTransfers",
+      "class": "ConnectedAccountTransferService",
+      "resource": "ConnectedAccountTransfer",
+      "doc": "https://www.airwallex.com/docs/api/scale/connected_account_transfers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/connected_account_transfers/create",
+          "summary": "Create a transfer between accounts on the same platform",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/connected_account_transfers",
+          "summary": "List connected account transfers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/connected_account_transfers/{id}",
+          "summary": "Retrieve a connected account transfer",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "connectedStores",
+      "class": "ConnectedStoreService",
+      "resource": "ConnectedStore",
+      "doc": "https://www.airwallex.com/docs/api/supporting_services/connected_stores",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/ecosystem/connected_stores/{id}",
+          "summary": "Retrieve a Connected Store",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/ecosystem/connected_stores",
+          "summary": "List Connected Stores",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "customers",
+      "class": "CustomerService",
+      "resource": "Customer",
+      "doc": "https://www.airwallex.com/docs/api/payments/customers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/customers/create",
+          "summary": "Create a customer",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "generateClientSecret",
+          "http": "GET",
+          "path": "/api/v1/pa/customers/{id}/generate_client_secret",
+          "summary": "Generate a client secret for a customer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/customers",
+          "summary": "List customers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/customers/{id}",
+          "summary": "Retrieve a customer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/customers/{id}/update",
+          "summary": "Update a customer",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "deposits",
+      "class": "DepositService",
+      "resource": "Deposit",
+      "doc": "https://www.airwallex.com/docs/api/core_resources/deposits",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/deposits/create",
+          "summary": "Create a deposit via direct debit",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/deposits",
+          "summary": "List all deposits",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/deposits/{id}",
+          "summary": "Retrieve a deposit",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "directDebits",
+      "class": "DirectDebitService",
+      "resource": "DirectDebit",
+      "doc": "https://www.airwallex.com/docs/api/core_resources/direct_debits",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/direct_debits/{transaction_id}",
+          "summary": "Retrieve a Direct Debit",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/direct_debits",
+          "summary": "List all Direct Debits",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/direct_debits/{transaction_id}/cancel",
+          "summary": "Cancel a Direct Debit",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "globalAccounts",
+      "class": "GlobalAccountService",
+      "resource": "GlobalAccount",
+      "doc": "https://www.airwallex.com/docs/api/core_resources/global_accounts",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/create",
+          "summary": "Create a Global Account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{id}",
+          "summary": "Retrieve a Global Account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/global_accounts",
+          "summary": "List all Global Accounts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{id}/update",
+          "summary": "Update an existing Global Account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "generateStatementLetter",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{id}/generate_statement_letter",
+          "summary": "Generate a Global Account statement",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "close",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{id}/close",
+          "summary": "Close a Global Account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "createAlias",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/create",
+          "summary": "Create an alias for a Global Account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieveAlias",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/{id}",
+          "summary": "Retrieve an alias",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allAliases",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases",
+          "summary": "List all aliases",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "initiateAliasPort",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/{id}/initiate_port",
+          "summary": "Initiate an alias port",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "submitAliasVerificationCode",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/{id}/submit_verification_code",
+          "summary": "Submit an alias verification code",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "requestNewAliasVerificationCode",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/{id}/request_new_verification_code",
+          "summary": "Request a new alias verification code",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancelAlias",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/aliases/{id}/cancel",
+          "summary": "Cancel an alias",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveMandate",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{global_account_id}/mandates/{id}",
+          "summary": "Retrieve a Direct Debit Payout Mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allMandates",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{global_account_id}/mandates",
+          "summary": "List all Direct Debit Payout Mandates",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "cancelMandate",
+          "http": "POST",
+          "path": "/api/v1/global_accounts/{global_account_id}/mandates/{id}/cancel",
+          "summary": "Cancel a Direct Debit Payout Mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allTransactions",
+          "http": "GET",
+          "path": "/api/v1/global_accounts/{id}/transactions",
+          "summary": "List all Global Account transactions",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "linkedAccounts",
+      "class": "LinkedAccountService",
+      "resource": "LinkedAccount",
+      "doc": "https://www.airwallex.com/docs/api/core_resources/linked_accounts",
+      "methods": [
+        {
+          "name": "startAuth",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/auth",
+          "summary": "Start a new linked account authentication",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "completeAuth",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/complete_auth",
+          "summary": "Complete an authentication refresh",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "confirm",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/confirm",
+          "summary": "Confirm a linked account from candidates",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/create",
+          "summary": "Create a linked account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/linked_accounts",
+          "summary": "List all linked accounts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveBalances",
+          "http": "GET",
+          "path": "/api/v1/linked_accounts/{id}/balances",
+          "summary": "Get available balances for a linked account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "refreshAuth",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/auth",
+          "summary": "Refresh authentication for a linked account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/linked_accounts/{id}",
+          "summary": "Retrieve a linked account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveMandate",
+          "http": "GET",
+          "path": "/api/v1/linked_accounts/{id}/mandate",
+          "summary": "Retrieve a direct debit deposit mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "updateMandate",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/mandate",
+          "summary": "Update a direct debit deposit mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "suspend",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/suspend",
+          "summary": "Suspend a linked account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "verifyMicrodeposits",
+          "http": "POST",
+          "path": "/api/v1/linked_accounts/{id}/verify_microdeposits",
+          "summary": "Verify a linked account using micro-deposits",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentAttempts",
+      "class": "PaymentAttemptService",
+      "resource": "PaymentAttempt",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_attempts",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_attempts/{id}",
+          "summary": "Retrieve a Payment Attempt",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_attempts",
+          "summary": "List Payment Attempts",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentConsents",
+      "class": "PaymentConsentService",
+      "resource": "PaymentConsent",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_consents",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_consents/create",
+          "summary": "Create a Payment Consent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_consents/{id}",
+          "summary": "Retrieve a Payment Consent",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_consents",
+          "summary": "List Payment Consents",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_consents/{id}/update",
+          "summary": "Update a Payment Consent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "verify",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_consents/{id}/verify",
+          "summary": "Verify a Payment Consent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "verifyContinue",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_consents/{id}/verify_continue",
+          "summary": "Continue verifying a Payment Consent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "disable",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_consents/{id}/disable",
+          "summary": "Disable a Payment Consent",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentDisputes",
+      "class": "PaymentDisputeService",
+      "resource": "PaymentDispute",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_disputes",
+      "methods": [
+        {
+          "name": "accept",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_disputes/{id}/accept",
+          "summary": "Accept a PaymentDispute",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "challenge",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_disputes/{id}/challenge",
+          "summary": "Challenge a PaymentDispute",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_disputes",
+          "summary": "List PaymentDisputes",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allRelatedPaymentIntents",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_disputes/{id}/related_payment_intents",
+          "summary": "List payment intents related to a PaymentDispute",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_disputes/{id}",
+          "summary": "Retrieve a PaymentDispute",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_disputes/{id}/update",
+          "summary": "Update a PaymentDispute",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentIntents",
+      "class": "PaymentIntentService",
+      "resource": "PaymentIntent",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_intents",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/create",
+          "summary": "Create a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_intents/{id}",
+          "summary": "Retrieve a Payment Intent",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_intents",
+          "summary": "List Payment Intents",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/update",
+          "summary": "Update a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "confirm",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/confirm",
+          "summary": "Confirm a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "capture",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/capture",
+          "summary": "Capture a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "confirmContinue",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/confirm_continue",
+          "summary": "Continue to confirm a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "incrementAuthorization",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/increment_authorization",
+          "summary": "Increment authorization for a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_intents/{id}/cancel",
+          "summary": "Cancel a Payment Intent",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentLinks",
+      "class": "PaymentLinkService",
+      "resource": "PaymentLink",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_links",
+      "methods": [
+        {
+          "name": "activate",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_links/{id}/activate",
+          "summary": "Activate a payment link",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_links/create",
+          "summary": "Create a payment link",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deactivate",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_links/{id}/deactivate",
+          "summary": "Deactivate a payment link",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_links",
+          "summary": "List payment links",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "notifyShopper",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_links/{id}/notify_shopper",
+          "summary": "Send a payment link to a shopper",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_links/{id}",
+          "summary": "Retrieve a payment link",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_links/{id}/update",
+          "summary": "Update a payment link",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "paymentMethods",
+      "class": "PaymentMethodService",
+      "resource": "PaymentMethod",
+      "doc": "https://www.airwallex.com/docs/api/payments/payment_methods",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_methods/create",
+          "summary": "Create a payment method",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "disable",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_methods/{id}/disable",
+          "summary": "Disable a payment method",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_methods",
+          "summary": "List payment methods",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/payment_methods/{id}",
+          "summary": "Retrieve a payment method",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/payment_methods/{id}/update",
+          "summary": "Update a payment method",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "reference",
+      "class": "ReferenceService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/supporting_services/reference_data",
+      "methods": [
+        {
+          "name": "allIndustryCategories",
+          "http": "GET",
+          "path": "/api/v1/reference/industry_categories",
+          "summary": "Industry categories",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allInvalidConversionDates",
+          "http": "GET",
+          "path": "/api/v1/reference/invalid_conversion_dates",
+          "summary": "Invalid conversion dates",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allSupportedCurrencies",
+          "http": "GET",
+          "path": "/api/v1/reference/supported_currencies",
+          "summary": "Supported currencies",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveExpiringQuota",
+          "http": "GET",
+          "path": "/api/v1/reference/order_items/expiring_quota",
+          "summary": "Get expiring transfer or deposit limit",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveQuota",
+          "http": "GET",
+          "path": "/api/v1/reference/order_items/quota",
+          "summary": "Get transfer or deposit limit",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "increaseQuota",
+          "http": "POST",
+          "path": "/api/v1/reference/order_items/upload",
+          "summary": "Increase transfer or deposit limit",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "refunds",
+      "class": "RefundService",
+      "resource": "Refund",
+      "doc": "https://www.airwallex.com/docs/api/payments/refunds",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/refunds/create",
+          "summary": "Create a refund",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/refunds",
+          "summary": "List refunds",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/refunds/{id}",
+          "summary": "Retrieve a refund",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "securityAuditLogs",
+      "class": "SecurityAuditLogService",
+      "resource": "SecurityAuditLog",
+      "doc": "https://www.airwallex.com/docs/api/security/activity_log",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/audit_log/security_audit_logs",
+          "summary": "List security audit logs",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "transfers",
+      "class": "TransferService",
+      "resource": "Transfer",
+      "doc": "https://www.airwallex.com/docs/api/payouts/transfers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/transfers/create",
+          "summary": "Create a transfer",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/transfers/{id}",
+          "summary": "Retrieve a transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/transfers",
+          "summary": "List all transfers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "confirmFunding",
+          "http": "POST",
+          "path": "/api/v1/transfers/{id}/confirm_funding",
+          "summary": "Confirm funding for a transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "validate",
+          "http": "POST",
+          "path": "/api/v1/transfers/validate",
+          "summary": "Validate a transfer",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/transfers/{id}/cancel",
+          "summary": "Cancel a transfer",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "webhooks",
+      "class": "WebhookEndpointService",
+      "resource": "WebhookEndpoint",
+      "doc": "https://www.airwallex.com/docs/api/webhooks/webhooks",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/webhooks/create",
+          "summary": "Create a webhook",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/webhooks/{id}",
+          "summary": "Retrieve a webhook",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/webhooks",
+          "summary": "List webhooks",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/webhooks/{id}/update",
+          "summary": "Update a webhook",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/webhooks/{id}/delete",
+          "summary": "Delete a webhook",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Accounting",
+      "property": "fieldValues",
+      "class": "FieldValueService",
+      "resource": "FieldValue",
+      "doc": "https://www.airwallex.com/docs/api/accounting/accounting_field_values",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounting/accounting_field_values/create",
+          "summary": "Create an accounting field value",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounting/accounting_field_values/{id}",
+          "summary": "Retrieve an accounting field value",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounting/accounting_field_values",
+          "summary": "List accounting field values",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/accounting/accounting_field_values/{id}/update",
+          "summary": "Update an accounting field value",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Accounting",
+      "property": "fields",
+      "class": "FieldService",
+      "resource": "Field",
+      "doc": "https://www.airwallex.com/docs/api/accounting/accounting_fields",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounting/accounting_fields/create",
+          "summary": "Create an accounting field",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounting/accounting_fields/{id}",
+          "summary": "Retrieve an accounting field",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounting/accounting_fields",
+          "summary": "List accounting fields",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/accounting/accounting_fields/{id}/update",
+          "summary": "Update an accounting field",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Accounting",
+      "property": "glAccounts",
+      "class": "GlAccountService",
+      "resource": "GlAccount",
+      "doc": "https://www.airwallex.com/docs/api/accounting/general_ledger_accounts",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounting/gl_accounts/create",
+          "summary": "Create a General Ledger Account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounting/gl_accounts/{id}",
+          "summary": "Retrieve a General Ledger Account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounting/gl_accounts",
+          "summary": "List General Ledger Accounts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/accounting/gl_accounts/{id}/update",
+          "summary": "Update a General Ledger Account",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Accounting",
+      "property": "taxCodes",
+      "class": "TaxCodeService",
+      "resource": "TaxCode",
+      "doc": "https://www.airwallex.com/docs/api/accounting/tax_codes",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounting/tax_codes/create",
+          "summary": "Create a tax code",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounting/tax_codes/{id}",
+          "summary": "Retrieve a tax code",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounting/tax_codes",
+          "summary": "List tax codes",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/accounting/tax_codes/{id}/update",
+          "summary": "Update a tax code",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "checkouts",
+      "class": "CheckoutService",
+      "resource": "Checkout",
+      "doc": "https://www.airwallex.com/docs/api/billing/billing_checkouts",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/billing_checkouts/create",
+          "summary": "Create a billing checkout",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_checkouts/{id}",
+          "summary": "Retrieve a billing checkout",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_checkouts",
+          "summary": "List billing checkouts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/billing_checkouts/{id}/update",
+          "summary": "Update a billing checkout",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/billing/billing_checkouts/{id}/cancel",
+          "summary": "Cancel a billing checkout",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "coupons",
+      "class": "CouponService",
+      "resource": "Coupon",
+      "doc": "https://www.airwallex.com/docs/api/billing/coupons",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/coupons/create",
+          "summary": "Create a coupon",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/coupons/{id}",
+          "summary": "Retrieve a coupon",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/coupons",
+          "summary": "List all coupons",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/coupons/{id}/update",
+          "summary": "Update a coupon",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "creditNotes",
+      "class": "CreditNoteService",
+      "resource": "CreditNote",
+      "doc": "https://www.airwallex.com/docs/api/billing/credit_notes",
+      "methods": [
+        {
+          "name": "addLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/add_line_items",
+          "summary": "Add line items to a credit note",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/create",
+          "summary": "Create a credit note",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/delete",
+          "summary": "Delete a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deleteLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/delete_line_items",
+          "summary": "Remove line items from a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "finalize",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/finalize",
+          "summary": "Finalize a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/credit_notes",
+          "summary": "List credit notes",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allLineItems",
+          "http": "GET",
+          "path": "/api/v1/billing/credit_notes/{id}/line_items",
+          "summary": "List a credit note's line items",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "preview",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/preview",
+          "summary": "Preview a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/credit_notes/{id}",
+          "summary": "Retrieve a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveLineItem",
+          "http": "GET",
+          "path": "/api/v1/billing/credit_notes/{id}/line_items/{line_item_id}",
+          "summary": "Retrieve a credit note line item",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/update",
+          "summary": "Update a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "updateLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/update_line_items",
+          "summary": "Update line items in a credit note",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "void",
+          "http": "POST",
+          "path": "/api/v1/billing/credit_notes/{id}/void",
+          "summary": "Void a credit note",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "customers",
+      "class": "CustomerService",
+      "resource": "Customer",
+      "doc": "https://www.airwallex.com/docs/api/billing/billing_customers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/billing_customers/create",
+          "summary": "Create a Billing Customer",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_customers/{id}",
+          "summary": "Retrieve a Billing Customer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveBankTransferInstructions",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_customers/{id}/bank_transfer_instructions",
+          "summary": "Retrieve Bank Transfer Instructions of a Billing Customer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_customers",
+          "summary": "List all Billing Customers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/billing_customers/{id}/update",
+          "summary": "Update a Billing Customer",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "eInvoicingDocuments",
+      "class": "EInvoicingDocumentService",
+      "resource": "EInvoicingDocument",
+      "doc": "https://www.airwallex.com/docs/api/billing/e-invoicing_documents",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/e_invoicing_documents/{id}",
+          "summary": "Retrieve an E-Invoicing Document",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/e_invoicing_documents",
+          "summary": "List E-Invoicing Documents",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "invoices",
+      "class": "InvoiceService",
+      "resource": "Invoice",
+      "doc": "https://www.airwallex.com/docs/api/billing/invoices",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/create",
+          "summary": "Create an invoice",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices/{id}",
+          "summary": "Retrieve an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices",
+          "summary": "List all invoices",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/update",
+          "summary": "Update an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "preview",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/preview",
+          "summary": "Preview an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "finalize",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/finalize",
+          "summary": "Finalize an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "markAsPaid",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/mark_as_paid",
+          "summary": "Mark an invoice as paid",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "pay",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/pay",
+          "summary": "Pay an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/delete",
+          "summary": "Delete a draft invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "void",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/void",
+          "summary": "Void an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "addLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/add_line_items",
+          "summary": "Add line items to an invoice",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieveLineItem",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices/{id}/line_items/{item_id}",
+          "summary": "Retrieve an invoice line item",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allLineItems",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices/{id}/line_items",
+          "summary": "List invoice line items",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "updateLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/update_line_items",
+          "summary": "Update line items in an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deleteLineItems",
+          "http": "POST",
+          "path": "/api/v1/billing/invoices/{id}/delete_line_items",
+          "summary": "Delete line items within an invoice",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveLineItemGroup",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices/{id}/line_item_groups/{group_id}",
+          "summary": "Retrieve an invoice line item group",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allLineItemGroups",
+          "http": "GET",
+          "path": "/api/v1/billing/invoices/{id}/line_item_groups",
+          "summary": "List invoice line item groups",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "meters",
+      "class": "MeterService",
+      "resource": "Meter",
+      "doc": "https://www.airwallex.com/docs/api/billing/meters",
+      "methods": [
+        {
+          "name": "archive",
+          "http": "POST",
+          "path": "/api/v1/billing/meters/{id}/archive",
+          "summary": "Archive a meter",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/meters/create",
+          "summary": "Create a meter",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/meters",
+          "summary": "List meters",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allSummaries",
+          "http": "GET",
+          "path": "/api/v1/billing/meters/{id}/summaries",
+          "summary": "Retrieve usage summaries for a meter",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "restore",
+          "http": "POST",
+          "path": "/api/v1/billing/meters/{id}/restore",
+          "summary": "Restore an archived meter",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/meters/{id}",
+          "summary": "Retrieve a meter",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/meters/{id}/update",
+          "summary": "Update a meter",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "paymentSources",
+      "class": "PaymentSourceService",
+      "resource": "PaymentSource",
+      "doc": "https://www.airwallex.com/docs/api/billing/payment_sources",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/payment_sources/create",
+          "summary": "Create a payment source",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/payment_sources",
+          "summary": "List payment sources",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/payment_sources/{id}",
+          "summary": "Retrieve a payment source",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "prices",
+      "class": "PriceService",
+      "resource": "Price",
+      "doc": "https://www.airwallex.com/docs/api/billing/prices",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/prices/create",
+          "summary": "Create a price",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/prices",
+          "summary": "List prices",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/prices/{id}",
+          "summary": "Retrieve a price",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/prices/{id}/update",
+          "summary": "Update a price",
+          "returns": "object",
+          "request_id": "optional"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "products",
+      "class": "ProductService",
+      "resource": "Product",
+      "doc": "https://www.airwallex.com/docs/api/billing/products",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/products/create",
+          "summary": "Create a product",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/products/{id}",
+          "summary": "Retrieve a product",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/products",
+          "summary": "List products",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/products/{id}/update",
+          "summary": "Update a product",
+          "returns": "object",
+          "request_id": "optional"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "rateCards",
+      "class": "RateCardService",
+      "resource": "RateCard",
+      "doc": "https://www.airwallex.com/docs/api/billing/rate_cards",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/rate_cards/create",
+          "summary": "Create a rate card",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/rate_cards/{id}/update",
+          "summary": "Update a rate card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards/{id}",
+          "summary": "Retrieve a rate card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards",
+          "summary": "List rate cards",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "createVersion",
+          "http": "POST",
+          "path": "/api/v1/billing/rate_cards/{id}/versions/create",
+          "summary": "Create a rate card version",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "allVersions",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards/{id}/versions",
+          "summary": "List rate card versions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveVersion",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards/{id}/versions/{version}",
+          "summary": "Retrieve a rate card version",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allVersionItems",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards/{id}/versions/{version}/items",
+          "summary": "List items in a rate card version",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveVersionItem",
+          "http": "GET",
+          "path": "/api/v1/billing/rate_cards/{id}/versions/{version}/items/{item_id}",
+          "summary": "Retrieve an item in a rate card version",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "subscriptions",
+      "class": "SubscriptionService",
+      "resource": "Subscription",
+      "doc": "https://www.airwallex.com/docs/api/billing/subscriptions",
+      "methods": [
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/billing/subscriptions/{id}/cancel",
+          "summary": "Cancel a subscription",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/billing/subscriptions/create",
+          "summary": "Create a subscription",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/subscriptions",
+          "summary": "List subscriptions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allItems",
+          "http": "GET",
+          "path": "/api/v1/billing/subscriptions/{id}/items",
+          "summary": "List subscription items",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/subscriptions/{id}",
+          "summary": "Retrieve a subscription",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveItem",
+          "http": "GET",
+          "path": "/api/v1/billing/subscriptions/{id}/items/{item_id}",
+          "summary": "Retrieve a subscription item",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/billing/subscriptions/{id}/update",
+          "summary": "Update a subscription",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "transactions",
+      "class": "TransactionService",
+      "resource": "Transaction",
+      "doc": "https://www.airwallex.com/docs/api/billing/billing_transactions",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_transactions/{id}",
+          "summary": "Retrieve a Billing Transaction",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/billing/billing_transactions",
+          "summary": "List all Billing Transactions",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Billing",
+      "property": "usageEvents",
+      "class": "UsageEventService",
+      "resource": "UsageEvent",
+      "doc": "https://www.airwallex.com/docs/api/billing/usage_events",
+      "methods": [
+        {
+          "name": "ingest",
+          "http": "POST",
+          "path": "/api/v1/billing/usage_events/ingest",
+          "summary": "Ingest a usage event",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "batchIngest",
+          "http": "POST",
+          "path": "/api/v1/billing/usage_events/batch_ingest",
+          "summary": "Batch ingest usage events",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "void",
+          "http": "POST",
+          "path": "/api/v1/billing/usage_events/void",
+          "summary": "Void a usage event",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Checkout",
+      "property": "sessions",
+      "class": "SessionService",
+      "resource": "Session",
+      "doc": "https://www.airwallex.com/docs/api/checkout/checkout_sessions",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/checkout/checkout_sessions/create",
+          "summary": "Create a checkout session",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/checkout/checkout_sessions/{id}",
+          "summary": "Retrieve a checkout session",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/checkout/checkout_sessions",
+          "summary": "List checkout sessions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/checkout/checkout_sessions/{id}/update",
+          "summary": "Update a checkout session",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/checkout/checkout_sessions/{id}/cancel",
+          "summary": "Cancel a checkout session",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Finance",
+      "property": "financialReports",
+      "class": "FinancialReportService",
+      "resource": "FinancialReport",
+      "doc": "https://www.airwallex.com/docs/api/finance/financial_reports",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/finance/financial_reports/create",
+          "summary": "Create a financial report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/finance/financial_reports/{id}",
+          "summary": "Retrieve a financial report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/finance/financial_reports",
+          "summary": "List financial reports",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveContent",
+          "http": "GET",
+          "path": "/api/v1/finance/financial_reports/{id}/content",
+          "summary": "Retrieve financial report content",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Finance",
+      "property": "financialTransactions",
+      "class": "FinancialTransactionService",
+      "resource": "FinancialTransaction",
+      "doc": "https://www.airwallex.com/docs/api/finance/financial_transactions",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/financial_transactions/{id}",
+          "summary": "Retrieve a Financial Transaction",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/financial_transactions",
+          "summary": "List all Financial Transactions",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Finance",
+      "property": "settlements",
+      "class": "SettlementService",
+      "resource": "Settlement",
+      "doc": "https://www.airwallex.com/docs/api/finance/settlements",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/financial/settlements",
+          "summary": "List settlements",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveReport",
+          "http": "GET",
+          "path": "/api/v1/pa/financial/settlements/{id}/report",
+          "summary": "Download the batch settlement report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/financial/settlements/{id}",
+          "summary": "Retrieve a settlement",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Fx",
+      "property": "conversionAmendments",
+      "class": "ConversionAmendmentService",
+      "resource": "ConversionAmendment",
+      "doc": "https://www.airwallex.com/docs/api/transactional_fx/conversion_amendments",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/fx/conversion_amendments/create",
+          "summary": "Create a conversion amendment",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/fx/conversion_amendments/{conversion_amendment_id}",
+          "summary": "Retrieve an amendment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/fx/conversion_amendments",
+          "summary": "List all amendments",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "quote",
+          "http": "POST",
+          "path": "/api/v1/fx/conversion_amendments/quote",
+          "summary": "Quote an amendment",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "Fx",
+      "property": "conversions",
+      "class": "ConversionService",
+      "resource": "Conversion",
+      "doc": "https://www.airwallex.com/docs/api/transactional_fx/conversion",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/fx/conversions/create",
+          "summary": "Create a conversion",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/fx/conversions/{conversion_id}",
+          "summary": "Retrieve a conversion",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/fx/conversions",
+          "summary": "List all conversions",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Fx",
+      "property": "quotes",
+      "class": "QuoteService",
+      "resource": "Quote",
+      "doc": "https://www.airwallex.com/docs/api/transactional_fx/quotes",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/fx/quotes/create",
+          "summary": "Create an FX quote",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/fx/quotes/{quote_id}",
+          "summary": "Retrieve a quote",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Fx",
+      "property": "rates",
+      "class": "RateService",
+      "resource": "Rate",
+      "doc": "https://www.airwallex.com/docs/api/transactional_fx/rates",
+      "methods": [
+        {
+          "name": "current",
+          "http": "GET",
+          "path": "/api/v1/fx/rates/current",
+          "summary": "Retrieve a current rate",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "authorizations",
+      "class": "AuthorizationService",
+      "resource": "Authorization",
+      "doc": "https://www.airwallex.com/docs/api/issuing/authorizations",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/authorizations/{id}",
+          "summary": "Retrieve an Authorization",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/authorizations",
+          "summary": "List all Authorizations",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "cardTransactionEvents",
+      "class": "CardTransactionEventService",
+      "resource": "CardTransactionEvent",
+      "doc": "https://www.airwallex.com/docs/api/issuing/card_transaction_events",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/card_transaction_events",
+          "summary": "Lists card transaction events",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/card_transaction_events/{id}",
+          "summary": "Retrieves a single card transaction event by ID",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "cardTransactionLifecycles",
+      "class": "CardTransactionLifecycleService",
+      "resource": "CardTransactionLifecycle",
+      "doc": "https://www.airwallex.com/docs/api/issuing/card_transaction_lifecycles",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/lifecycles/{id}",
+          "summary": "Retrieves one card transaction lifecycle by its ID",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/lifecycles",
+          "summary": "Lists all card transaction lifecycles",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "cardTransactions",
+      "class": "CardTransactionService",
+      "resource": "CardTransaction",
+      "doc": "https://www.airwallex.com/docs/api/issuing/card_transactions",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/card_transactions",
+          "summary": "Retrieves a list of card transactions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/card_transactions/{id}",
+          "summary": "Retrieves a single card transaction by its ID",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "cardholders",
+      "class": "CardholderService",
+      "resource": "Cardholder",
+      "doc": "https://www.airwallex.com/docs/api/issuing/cardholders",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/issuing/cardholders/create",
+          "summary": "Create a cardholder",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/issuing/cardholders/{id}/delete",
+          "summary": "Delete cardholder",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/cardholders",
+          "summary": "Get all cardholders",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/cardholders/{id}",
+          "summary": "Get cardholder details",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/issuing/cardholders/{id}/update",
+          "summary": "Update a cardholder",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "cards",
+      "class": "CardService",
+      "resource": "Card",
+      "doc": "https://www.airwallex.com/docs/api/issuing/cards",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/issuing/cards/create",
+          "summary": "Create a new card",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/cards/{id}",
+          "summary": "Retrieve a single card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/cards",
+          "summary": "List all cards",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/issuing/cards/{id}/update",
+          "summary": "Update an existing card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "activate",
+          "http": "POST",
+          "path": "/api/v1/issuing/cards/{id}/activate",
+          "summary": "Activate a card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "provisionDigitalToken",
+          "http": "POST",
+          "path": "/api/v1/issuing/cards/{id}/provision_digital_token",
+          "summary": "Add a card to a digital wallet",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveDetails",
+          "http": "GET",
+          "path": "/api/v1/issuing/cards/{id}/details",
+          "summary": "List a card's sensitive details",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveLimits",
+          "http": "GET",
+          "path": "/api/v1/issuing/cards/{id}/limits",
+          "summary": "List a card's remaining limits",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "config",
+      "class": "ConfigService",
+      "resource": "Config",
+      "doc": "https://www.airwallex.com/docs/api/issuing/config",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/config",
+          "summary": "Retrieve the Issuing Config",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/issuing/config/update",
+          "summary": "Update the Issuing Config",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "digitalWalletTokens",
+      "class": "DigitalWalletTokenService",
+      "resource": "DigitalWalletToken",
+      "doc": "https://www.airwallex.com/docs/api/issuing/digital_wallet_tokens",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/digital_wallet_tokens/{id}",
+          "summary": "Retrieve a single digital wallet token",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/digital_wallet_tokens",
+          "summary": "List all digital wallet tokens",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "updateStatus",
+          "http": "POST",
+          "path": "/api/v1/issuing/digital_wallet_tokens/{id}/lifecycle",
+          "summary": "Update the status of a digital wallet token",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "merchantBrands",
+      "class": "MerchantBrandService",
+      "resource": "MerchantBrand",
+      "doc": "https://www.airwallex.com/docs/api/issuing/merchant_brands",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/merchant_brands",
+          "summary": "Returns the merchant brands that match a given query",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/merchant_brands/{id}",
+          "summary": "Returns one merchant brand by ID",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "transactionDisputes",
+      "class": "TransactionDisputeService",
+      "resource": "TransactionDispute",
+      "doc": "https://www.airwallex.com/docs/api/issuing/transaction_disputes",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/issuing/transaction_disputes/create",
+          "summary": "Create a dispute for a card transaction",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/transaction_disputes/{id}",
+          "summary": "Retrieve a transaction dispute",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/transaction_disputes",
+          "summary": "List all transaction disputes",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/issuing/transaction_disputes/{id}/update",
+          "summary": "Update a transaction dispute",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "submit",
+          "http": "POST",
+          "path": "/api/v1/issuing/transaction_disputes/{id}/submit",
+          "summary": "Submit a transaction dispute",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/issuing/transaction_disputes/{id}/cancel",
+          "summary": "Cancel a transaction dispute",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Issuing",
+      "property": "transactions",
+      "class": "TransactionService",
+      "resource": "Transaction",
+      "doc": "https://www.airwallex.com/docs/api/issuing/transactions",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/issuing/transactions/{id}",
+          "summary": "Retrieve a single transaction by its ID",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/issuing/transactions",
+          "summary": "List all transactions for cards created within your organisation",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "config",
+      "class": "ConfigService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/payments/config",
+      "methods": [
+        {
+          "name": "retrieveReservePlan",
+          "http": "GET",
+          "path": "/api/v1/pa/config/reserve_plan",
+          "summary": "Retrieve the merchant's current reserve plan",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allPaymentMethodTypes",
+          "http": "GET",
+          "path": "/api/v1/pa/config/payment_method_types",
+          "summary": "List payment method types available to the merchant",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allBanks",
+          "http": "GET",
+          "path": "/api/v1/pa/config/banks",
+          "summary": "List available bank names",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "allApplePayDomains",
+          "http": "GET",
+          "path": "/api/v1/pa/config/applepay/registered_domains",
+          "summary": "List registered Apple Pay domains",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "addApplePayDomains",
+          "http": "POST",
+          "path": "/api/v1/pa/config/applepay/registered_domains/add_items",
+          "summary": "Add Apple Pay registered domains",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "removeApplePayDomains",
+          "http": "POST",
+          "path": "/api/v1/pa/config/applepay/registered_domains/remove_items",
+          "summary": "Remove Apple Pay registered domains",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allConvertibleShopperCurrencies",
+          "http": "GET",
+          "path": "/api/v1/pa/config/convertible_shopper_currencies",
+          "summary": "List currencies shoppers can convert from",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "conversionQuotes",
+      "class": "ConversionQuoteService",
+      "resource": "ConversionQuote",
+      "doc": "https://www.airwallex.com/docs/api/payments/conversion_quotes",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/conversion_quotes/create",
+          "summary": "Create a conversion quote fixing the exchange rate",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/conversion_quotes/{id}",
+          "summary": "Retrieve a conversion quote",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "customerBalanceTransactions",
+      "class": "CustomerBalanceTransactionService",
+      "resource": "CustomerBalanceTransaction",
+      "doc": "https://www.airwallex.com/docs/api/payments/customer_balance_transactions",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/customer_balance_transactions/{id}",
+          "summary": "Retrieve a Customer Balance Transaction",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "customsDeclarations",
+      "class": "CustomsDeclarationService",
+      "resource": "CustomsDeclaration",
+      "doc": "https://www.airwallex.com/docs/api/payments/customs_declarations",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/customs_declarations/create",
+          "summary": "Create a customs declaration",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/customs_declarations/{id}",
+          "summary": "Retrieve a customs declaration",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/customs_declarations/{id}/update",
+          "summary": "Update a customs declaration",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "redeclare",
+          "http": "POST",
+          "path": "/api/v1/pa/customs_declarations/{id}/redeclare",
+          "summary": "Redeclare a customs declaration",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "fundsSplitReversals",
+      "class": "FundsSplitReversalService",
+      "resource": "FundsSplitReversal",
+      "doc": "https://www.airwallex.com/docs/api/payments/funds_split_reversals",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/funds_split_reversals/create",
+          "summary": "Create a Funds Split Reversal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/funds_split_reversals/{id}",
+          "summary": "Retrieve a Funds Split Reversal",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/funds_split_reversals",
+          "summary": "List Funds Split Reversals",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "fundsSplits",
+      "class": "FundsSplitService",
+      "resource": "FundsSplit",
+      "doc": "https://www.airwallex.com/docs/api/payments/funds_splits",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/funds_splits/create",
+          "summary": "Create a Funds Split",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/funds_splits",
+          "summary": "List Funds Splits",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "release",
+          "http": "POST",
+          "path": "/api/v1/pa/funds_splits/{id}/release",
+          "summary": "Release a Funds Split",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/funds_splits/{id}",
+          "summary": "Retrieve a Funds Split",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "referenceData",
+      "class": "ReferenceDataService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/payments/reference_data",
+      "methods": [
+        {
+          "name": "lookupBin",
+          "http": "GET",
+          "path": "/api/v1/pa/reference/bin/lookup",
+          "summary": "Look up BIN details for a card number",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "settlementRecords",
+      "class": "SettlementRecordService",
+      "resource": "SettlementRecord",
+      "doc": "https://www.airwallex.com/docs/api/payments/settlement_records",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/settlement_records",
+          "summary": "Get settlement records",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Payments",
+      "property": "terminals",
+      "class": "TerminalService",
+      "resource": "Terminal",
+      "doc": "https://www.airwallex.com/docs/api/payments/terminals",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/create",
+          "summary": "Create a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/pa/pos/terminals/{id}",
+          "summary": "Retrieve a terminal",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/pa/pos/terminals",
+          "summary": "List terminals",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/update",
+          "summary": "Update a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "activate",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/activate",
+          "summary": "Activate a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "processPaymentIntent",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/process_payment_intent",
+          "summary": "Process a payment intent on a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "resetPassword",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/reset_password",
+          "summary": "Reset a terminal's password",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "deactivate",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/deactivate",
+          "summary": "Deactivate a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "terminate",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/terminate",
+          "summary": "Terminate a terminal",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "cancelCurrentOperation",
+          "http": "POST",
+          "path": "/api/v1/pa/pos/terminals/{id}/cancel_current_operation",
+          "summary": "Cancel the current operation on a terminal",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Risk",
+      "property": "fraudFeedback",
+      "class": "FraudFeedbackService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/risk/fraud_feedback_issuing",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/risk/issuing/fraud_feedback",
+          "summary": "Reports whether an issuing transaction was authorized by the cardholder",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Risk",
+      "property": "reports",
+      "class": "ReportService",
+      "resource": "Report",
+      "doc": "https://www.airwallex.com/docs/api/risk/risk_reports",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/risk/risk_reports/{id}",
+          "summary": "Retrieves a risk report to track its generation status",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "generate",
+          "http": "POST",
+          "path": "/api/v1/risk/risk_reports/generate",
+          "summary": "Submits a query to generate a risk report and returns its id",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Risk",
+      "property": "rfis",
+      "class": "RfiService",
+      "resource": "Rfi",
+      "doc": "https://www.airwallex.com/docs/api/risk/request_for_information_rfi",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/rfis/{id}",
+          "summary": "Fetches a single RFI by its ID",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/rfis",
+          "summary": "Returns a list of RFIs",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "respond",
+          "http": "POST",
+          "path": "/api/v1/rfis/{id}/respond",
+          "summary": "Submits a response to a specific RFI",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Risk",
+      "property": "sellers",
+      "class": "SellerService",
+      "resource": "Seller",
+      "doc": "https://www.airwallex.com/docs/api/risk/sellers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/sellers/create",
+          "summary": "Create a Seller",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/sellers/{id}",
+          "summary": "Retrieve a Seller",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deactivate",
+          "http": "POST",
+          "path": "/api/v1/sellers/{id}/deactivate",
+          "summary": "Deactivate a Seller",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Risk",
+      "property": "watchlist",
+      "class": "WatchlistService",
+      "resource": "WatchlistItem",
+      "doc": "https://www.airwallex.com/docs/api/risk/watchlist",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/risk/watchlist/{item_id}",
+          "summary": "Retrieves a specific Watchlist item using its item_id",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/risk/watchlist",
+          "summary": "Lists all Watchlist items",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/risk/watchlist/{item_id}/update",
+          "summary": "Changes an existing Watchlist item",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/risk/watchlist/create",
+          "summary": "Adds a new item to the Watchlist",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "hostedFlows",
+      "class": "HostedFlowService",
+      "resource": "HostedFlow",
+      "doc": "https://www.airwallex.com/docs/api/scale/hosted_flows",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/hosted_flows/create",
+          "summary": "Create a hosted flow for a connected account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/hosted_flows/{id}",
+          "summary": "Retrieve a hosted flow",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "authorize",
+          "http": "POST",
+          "path": "/api/v1/hosted_flows/{id}/authorize",
+          "summary": "Authorize a hosted flow",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "invitationLinks",
+      "class": "InvitationLinkService",
+      "resource": "InvitationLink",
+      "doc": "https://www.airwallex.com/docs/api/scale/invitation_links",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounts/invitation_links/create",
+          "summary": "Create an account invitation link",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounts/invitation_links/{id}",
+          "summary": "Retrieve an account invitation link",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "offboardings",
+      "class": "OffboardingService",
+      "resource": "Offboarding",
+      "doc": "https://www.airwallex.com/docs/api/scale/offboardings",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/accounts/{account_id}/offboardings/create",
+          "summary": "Submit an account closure request",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/accounts/{account_id}/offboardings/{id}",
+          "summary": "Retrieve an offboarding",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/accounts/{account_id}/offboardings",
+          "summary": "List offboardings for a connected account",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "platformLiquidityPrograms",
+      "class": "PlatformLiquidityProgramService",
+      "resource": "PlatformLiquidityProgram",
+      "doc": "https://www.airwallex.com/docs/api/scale/platform_liquidity_programs",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/platform_liquidity_programs/{id}",
+          "summary": "Retrieve a liquidity program",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deposit",
+          "http": "POST",
+          "path": "/api/v1/platform_liquidity_programs/{id}/deposit",
+          "summary": "Deposit funds into a liquidity program",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "withdraw",
+          "http": "POST",
+          "path": "/api/v1/platform_liquidity_programs/{id}/withdraw",
+          "summary": "Withdraw funds from a liquidity program",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "createSpendingAccount",
+          "http": "POST",
+          "path": "/api/v1/platform_liquidity_programs/{id}/program_spending_accounts/create",
+          "summary": "Create a program spending account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveSpendingAccount",
+          "http": "GET",
+          "path": "/api/v1/platform_liquidity_programs/{id}/program_spending_accounts/{spending_account_id}",
+          "summary": "Retrieve a program spending account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allSpendingAccounts",
+          "http": "GET",
+          "path": "/api/v1/platform_liquidity_programs/{id}/program_spending_accounts",
+          "summary": "List program spending accounts",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "adjustSpendingAccountLimits",
+          "http": "POST",
+          "path": "/api/v1/platform_liquidity_programs/{id}/program_spending_accounts/{spending_account_id}/adjust_limits",
+          "summary": "Adjust limits on a program spending account",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "allTransactions",
+          "http": "GET",
+          "path": "/api/v1/platform_liquidity_programs/{id}/transactions",
+          "summary": "List program transactions",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "platformReports",
+      "class": "PlatformReportService",
+      "resource": "PlatformReport",
+      "doc": "https://www.airwallex.com/docs/api/scale/platform_reports",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/platform_reports/create",
+          "summary": "Request a platform report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/platform_reports/{id}",
+          "summary": "Retrieve a platform report",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "pspSettlementDeposits",
+      "class": "PspSettlementDepositService",
+      "resource": "PspSettlementDeposit",
+      "doc": "https://www.airwallex.com/docs/api/scale/psp_settlement_deposits",
+      "methods": [
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/psp_settlement_deposits",
+          "summary": "List PSP settlement deposits",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "pspSettlementIntents",
+      "class": "PspSettlementIntentService",
+      "resource": "PspSettlementIntent",
+      "doc": "https://www.airwallex.com/docs/api/scale/psp_settlement_intents",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_intents/create",
+          "summary": "Create a PSP settlement intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/psp_settlement_intents/{id}",
+          "summary": "Retrieve a PSP settlement intent",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/psp_settlement_intents",
+          "summary": "List PSP settlement intents",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_intents/{id}/update",
+          "summary": "Update a PSP settlement intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "submit",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_intents/{id}/submit",
+          "summary": "Submit a PSP settlement intent",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_intents/{id}/cancel",
+          "summary": "Cancel a PSP settlement intent",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Scale",
+      "property": "pspSettlementSplits",
+      "class": "PspSettlementSplitService",
+      "resource": "PspSettlementSplit",
+      "doc": "https://www.airwallex.com/docs/api/scale/psp_settlement_splits",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/psp_settlement_splits/{id}",
+          "summary": "Retrieve a PSP settlement split",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/psp_settlement_splits",
+          "summary": "List PSP settlement splits",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_intents/{psp_settlement_intent_id}/split",
+          "summary": "Split a PSP settlement intent",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "release",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_splits/{id}/release",
+          "summary": "Release a PSP settlement split",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/psp_settlement_splits/{id}/cancel",
+          "summary": "Cancel a PSP settlement split",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "accounts",
+      "class": "AccountService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/accounts",
+      "methods": [
+        {
+          "name": "approveAmendment",
+          "http": "POST",
+          "path": "/api/v1/simulation/account/amendments/{id}/approve",
+          "summary": "Simulate approving an account amendment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "rejectAmendment",
+          "http": "POST",
+          "path": "/api/v1/simulation/account/amendments/{id}/reject",
+          "summary": "Simulate rejecting an account amendment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "updateStatus",
+          "http": "POST",
+          "path": "/api/v1/simulation/accounts/{account_id}/update_status",
+          "summary": "Simulate changing a connected account status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "billing",
+      "class": "BillingService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/billing",
+      "methods": [
+        {
+          "name": "failNextAutocharge",
+          "http": "POST",
+          "path": "/api/v1/simulation/billing/payment_sources/{id}/fail_next_autocharge",
+          "summary": "Simulate a failed next autocharge for a payment source",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "deposits",
+      "class": "DepositService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/deposits",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/simulation/deposit/create",
+          "summary": "Simulate a deposit into a Global Account",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "reject",
+          "http": "POST",
+          "path": "/api/v1/simulation/deposits/{deposit_id}/reject",
+          "summary": "Reject a Direct Debit deposit",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "reverse",
+          "http": "POST",
+          "path": "/api/v1/simulation/deposits/{deposit_id}/reverse",
+          "summary": "Reverse a Direct Debit deposit",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "settle",
+          "http": "POST",
+          "path": "/api/v1/simulation/deposits/{deposit_id}/settle",
+          "summary": "Settle a Direct Debit deposit",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "issuing",
+      "class": "IssuingService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/issuing",
+      "methods": [
+        {
+          "name": "createTransaction",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/create",
+          "summary": "Simulate a transaction on an issued card",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "captureLifecycle",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/card_transaction_lifecycles/{card_transaction_lifecycle_id}/capture",
+          "summary": "Simulate capturing a card transaction lifecycle",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "createRefund",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/refund",
+          "summary": "Simulate a card refund",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "reverseLifecycle",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/card_transaction_lifecycles/{card_transaction_lifecycle_id}/reverse",
+          "summary": "Simulate reversing a card transaction lifecycle",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "passCardholderReview",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/cardholders/{id}/pass_review",
+          "summary": "Simulate a cardholder passing review",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "notifyThreeDs",
+          "http": "POST",
+          "path": "/api/v1/simulation/issuing/threeds/notify",
+          "summary": "Simulate a 3DS notification",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "linkedAccounts",
+      "class": "LinkedAccountService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/linked_accounts",
+      "methods": [
+        {
+          "name": "acceptMandate",
+          "http": "POST",
+          "path": "/api/v1/simulation/linked_accounts/{linked_account_id}/mandate/accept",
+          "summary": "Simulate accepting a mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "rejectMandate",
+          "http": "POST",
+          "path": "/api/v1/simulation/linked_accounts/{linked_account_id}/mandate/reject",
+          "summary": "Simulate rejecting a mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "cancelMandate",
+          "http": "POST",
+          "path": "/api/v1/simulation/linked_accounts/{linked_account_id}/mandate/cancel",
+          "summary": "Simulate cancelling a mandate",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "failMicrodeposits",
+          "http": "POST",
+          "path": "/api/v1/simulation/linked_accounts/{linked_account_id}/fail_microdeposits",
+          "summary": "Simulate failed micro deposits verification",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "offboardings",
+      "class": "OffboardingService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/offboardings",
+      "methods": [
+        {
+          "name": "cancel",
+          "http": "POST",
+          "path": "/api/v1/simulation/accounts/{account_id}/offboardings/{id}/cancel",
+          "summary": "Simulate cancelling an offboarding",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "complete",
+          "http": "POST",
+          "path": "/api/v1/simulation/accounts/{account_id}/offboardings/{id}/complete",
+          "summary": "Simulate completing an offboarding",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "payments",
+      "class": "PaymentService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/payments",
+      "methods": [
+        {
+          "name": "shopperAction",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/shopper_actions/{action}",
+          "summary": "Simulate a shopper action",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "createDispute",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/payment_disputes/create",
+          "summary": "Create a simulated payment dispute",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "resolveDispute",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/payment_disputes/{id}/resolve",
+          "summary": "Resolve a simulated payment dispute",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "escalateDispute",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/payment_disputes/{id}/escalate",
+          "summary": "Escalate a simulated payment dispute",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "rfis",
+      "class": "RfiService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/request_for_information_rfi",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/simulation/rfis/create",
+          "summary": "Create an RFI",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "followUp",
+          "http": "POST",
+          "path": "/api/v1/simulation/rfis/{id}/follow_up",
+          "summary": "Send a follow-up for an RFI",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "close",
+          "http": "POST",
+          "path": "/api/v1/simulation/rfis/{id}/close",
+          "summary": "Close an RFI",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "terminals",
+      "class": "TerminalService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/terminal_simulation",
+      "methods": [
+        {
+          "name": "generateActivationCode",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/pos/terminals/generate_activation_code",
+          "summary": "Generate a terminal activation code",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "turnOn",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/pos/terminals/turn_on",
+          "summary": "Power on a simulated terminal",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "turnOff",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/pos/terminals/turn_off",
+          "summary": "Power off a simulated terminal",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "confirmPaymentIntent",
+          "http": "POST",
+          "path": "/api/v1/simulation/pa/pos/terminals/confirm_payment_intent",
+          "summary": "Confirm a terminal payment using a scenario",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allPaymentScenarios",
+          "http": "GET",
+          "path": "/api/v1/simulation/pa/pos/terminals/payment_scenarios",
+          "summary": "List available payment scenarios",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Simulation",
+      "property": "transfers",
+      "class": "TransferService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/simulation/transfers",
+      "methods": [
+        {
+          "name": "transition",
+          "http": "POST",
+          "path": "/api/v1/simulation/transfers/{id}/transition",
+          "summary": "Transition a transfer status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    }
+  ]
+}
