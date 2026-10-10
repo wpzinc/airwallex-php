@@ -49,11 +49,11 @@ class ReferenceService extends AbstractService
      *
      * @param array<string, mixed> $params Query parameters.
      * @param array<string, mixed> $opts   Request options (on_behalf_of, api_version, headers, timeout).
-     * @return Collection<AirwallexObject>
+     * @return AirwallexObject
      */
-    public function allSupportedCurrencies(array $params = [], array $opts = []): Collection
+    public function retrieveSupportedCurrencies(array $params = [], array $opts = []): AirwallexObject
     {
-        return $this->requestCollection('get', '/api/v1/reference/supported_currencies', $params, $opts, AirwallexObject::class);
+        return $this->request('get', '/api/v1/reference/supported_currencies', $params, $opts, AirwallexObject::class);
     }
 
     /**

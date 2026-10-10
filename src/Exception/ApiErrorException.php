@@ -38,11 +38,27 @@ class ApiErrorException extends \RuntimeException implements ExceptionInterface
             default                   => UnknownApiErrorException::class,
         };
 
-        $json    = $response->json();
-        $json    = is_array($json) ? $json : [];
-        $message = is_string($json['message'] ?? null) && $json['message'] !== ''
-            ? $json['message']
-            : sprintf('Airwallex API request failed with HTTP %d', $response->status);
+        $json = $response->json();
+        $json = is_array($json) ? $json : [];
+
+        // Most endpoints use {code, message}; some return RFC 7807 {title, detail}
+        $message = null;
+        foreach (['message', 'detail', 'title'] as $key) {
+            if (is_string($json[$key] ?? null) && $json[$key] !== '') {
+                $message = $json[$key];
+                break;
+            }
+        }
+        $message ??= sprintf('Airwallex API request failed with HTTP %d', $response->status);
+
+        // Airwallex returns 401 for missing scopes as well as bad tokens
+        if ($response->status === 401 && stripos($message, 'permission') !== false) {
+            $class = PermissionException::class;
+        }
+
+        if ($response->status === 400 && ($json['code'] ?? null) === 'duplicate_request') {
+            $class = IdempotencyException::class;
+        }
 
         $e                = new $class($message, $response->status);
         $e->response      = $response;
@@ -92,6 +108,18 @@ class ApiErrorException extends \RuntimeException implements ExceptionInterface
     public function getDetails(): ?array
     {
         return $this->details;
+    }
+
+    /**
+     * Field-level validation errors from details.errors, e.g. [['code' => '001', 'source' => 'entity_type']].
+     *
+     * @return list<array<string, mixed>>
+     */
+    public function getErrors(): array
+    {
+        $errors = $this->details['errors'] ?? [];
+
+        return is_array($errors) ? array_values(array_filter($errors, 'is_array')) : [];
     }
 
     public function getResponse(): ?Response

@@ -192,7 +192,7 @@ class ApiRequestor
         $response                 = $this->sendRaw($method, $url, $headers, $body, $timeout, $canRetry);
 
         // The token may have been revoked or expired early, so log in again once.
-        if ($response->status === 401 && $this->config->accessToken === null) {
+        if ($response->status === 401 && $this->config->accessToken === null && stripos($response->body, 'permission') === false) {
             $headers['Authorization'] = 'Bearer ' . $this->getAccessToken(true, $loginAs);
             $response                 = $this->sendRaw($method, $url, $headers, $body, $timeout, $canRetry);
         }

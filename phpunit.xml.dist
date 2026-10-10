@@ -4,10 +4,15 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          failOnWarning="true"
-         failOnRisky="true">
+         failOnRisky="true"
+         defaultTestSuite="unit">
     <testsuites>
         <testsuite name="unit">
             <directory>tests</directory>
+            <exclude>tests/Sandbox</exclude>
+        </testsuite>
+        <testsuite name="sandbox">
+            <directory>tests/Sandbox</directory>
         </testsuite>
     </testsuites>
     <source>

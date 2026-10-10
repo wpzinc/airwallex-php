@@ -19,6 +19,7 @@ use WPZinc\Airwallex\Service\AbstractServiceFactory;
  * @property-read PspSettlementDepositService $pspSettlementDeposits
  * @property-read PspSettlementIntentService $pspSettlementIntents
  * @property-read PspSettlementSplitService $pspSettlementSplits
+ * @property-read SettlementReportService $settlementReports
  */
 class ScaleServiceFactory extends AbstractServiceFactory
 {
@@ -33,6 +34,7 @@ class ScaleServiceFactory extends AbstractServiceFactory
             'pspSettlementDeposits'     => PspSettlementDepositService::class,
             'pspSettlementIntents'      => PspSettlementIntentService::class,
             'pspSettlementSplits'       => PspSettlementSplitService::class,
+            'settlementReports'         => SettlementReportService::class,
         ];
     }
 }

@@ -41,6 +41,20 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | --- | --- | --- |
 | `authorize()` | `POST /api/v1/authentication/authorize` | Authorize an Account |
 
+### `$airwallex->autoPayments`
+
+[API reference](https://www.airwallex.com/docs/api/auto_payments/auto_payments)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/auto_payments/create` | Create an Auto Payment |
+| `retrieve($id)` | `GET /api/v1/auto_payments/{id}` | Retrieve an Auto Payment |
+| `all()` | `GET /api/v1/auto_payments` | List all Auto Payments |
+| `update($id)` | `POST /api/v1/auto_payments/{id}/update` | Update an Auto Payment |
+| `enable($id)` | `POST /api/v1/auto_payments/{id}/enable` | Enable an Auto Payment |
+| `disable($id)` | `POST /api/v1/auto_payments/{id}/disable` | Disable an Auto Payment |
+| `allTasks()` | `GET /api/v1/auto_payments/task` | List all Auto Payment Tasks |
+
 ### `$airwallex->balances`
 
 [API reference](https://www.airwallex.com/docs/api/core_resources/balances)
@@ -49,6 +63,22 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | --- | --- | --- |
 | `current()` | `GET /api/v1/balances/current` | Retrieve current balances |
 | `history()` | `GET /api/v1/balances/history` | Retrieve balance history |
+
+### `$airwallex->batchTransfers`
+
+[API reference](https://www.airwallex.com/docs/api/payouts/batch_transfers)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/batch_transfers/create` | Create a Batch Transfer |
+| `retrieve($id)` | `GET /api/v1/batch_transfers/{id}` | Retrieve a Batch Transfer |
+| `all()` | `GET /api/v1/batch_transfers` | List all Batch Transfers |
+| `addItems($id)` | `POST /api/v1/batch_transfers/{id}/add_items` | Add Items To a Batch |
+| `quote($id)` | `POST /api/v1/batch_transfers/{id}/quote` | Quote a Batch Transfer |
+| `submit($id)` | `POST /api/v1/batch_transfers/{id}/submit` | Submit a Batch Transfer |
+| `delete($id)` | `POST /api/v1/batch_transfers/{id}/delete` | Delete a Batch Transfer |
+| `deleteItems($id)` | `POST /api/v1/batch_transfers/{id}/delete_items` | Delete Items Within a Batch |
+| `allItems($id)` | `GET /api/v1/batch_transfers/{id}/items` | List all Items Within a Batch |
 
 ### `$airwallex->beneficiaries`
 
@@ -179,6 +209,19 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | `suspend($id)` | `POST /api/v1/linked_accounts/{id}/suspend` | Suspend a linked account |
 | `verifyMicrodeposits($id)` | `POST /api/v1/linked_accounts/{id}/verify_microdeposits` | Verify a linked account using micro-deposits |
 
+### `$airwallex->payers`
+
+[API reference](https://www.airwallex.com/docs/api/payouts/payers)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/payers/create` | Create a Payer |
+| `retrieve($id)` | `GET /api/v1/payers/{id}` | Retrieve a Payer |
+| `all()` | `GET /api/v1/payers` | List all Payers |
+| `update($id)` | `POST /api/v1/payers/{id}/update` | Update an Existing Payer |
+| `validate()` | `POST /api/v1/payers/validate` | Validate a Payer |
+| `delete($id)` | `POST /api/v1/payers/{id}/delete` | Delete an Existing Payer |
+
 ### `$airwallex->paymentAttempts`
 
 [API reference](https://www.airwallex.com/docs/api/payments/payment_attempts)
@@ -257,6 +300,17 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | `retrieve($id)` | `GET /api/v1/pa/payment_methods/{id}` | Retrieve a payment method |
 | `update($id)` | `POST /api/v1/pa/payment_methods/{id}/update` | Update a payment method |
 
+### `$airwallex->reconciliation`
+
+[API reference](https://www.airwallex.com/docs/api/reconciliation/reconciliation)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `allBalances()` | `GET /api/v1/tc/balances` | List all Balances |
+| `requestBalances()` | `POST /api/v1/tc/balances/requests` | Retrieve the Balances in Batch |
+| `allTransactions()` | `GET /api/v1/tc/transactions` | List all Transactions |
+| `requestTransactions()` | `POST /api/v1/tc/transactions/requests` | Retrieve the Transactions in Batch |
+
 ### `$airwallex->reference`
 
 [API reference](https://www.airwallex.com/docs/api/supporting_services/reference_data)
@@ -265,7 +319,7 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | --- | --- | --- |
 | `allIndustryCategories()` | `GET /api/v1/reference/industry_categories` | Industry categories |
 | `allInvalidConversionDates()` | `GET /api/v1/reference/invalid_conversion_dates` | Invalid conversion dates |
-| `allSupportedCurrencies()` | `GET /api/v1/reference/supported_currencies` | Supported currencies |
+| `retrieveSupportedCurrencies()` | `GET /api/v1/reference/supported_currencies` | Supported currencies |
 | `retrieveExpiringQuota()` | `GET /api/v1/reference/order_items/expiring_quota` | Get expiring transfer or deposit limit |
 | `retrieveQuota()` | `GET /api/v1/reference/order_items/quota` | Get transfer or deposit limit |
 | `increaseQuota()` | `POST /api/v1/reference/order_items/upload` | Increase transfer or deposit limit |
@@ -279,6 +333,15 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | `create()` | `POST /api/v1/pa/refunds/create` | Create a refund |
 | `all()` | `GET /api/v1/pa/refunds` | List refunds |
 | `retrieve($id)` | `GET /api/v1/pa/refunds/{id}` | Retrieve a refund |
+
+### `$airwallex->reserves`
+
+[API reference](https://www.airwallex.com/docs/api/reserves/reserves)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/reserves/create` | Create a Reserve |
+| `unreserve()` | `POST /api/v1/reserves/unreserve` | Create an Unreserve |
 
 ### `$airwallex->securityAuditLogs`
 
@@ -745,6 +808,27 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | `retrieve($id)` | `GET /api/v1/issuing/transactions/{id}` | Retrieve a single transaction by its ID |
 | `all()` | `GET /api/v1/issuing/transactions` | List all transactions for cards created within your organisation |
 
+## Lending
+
+### `$airwallex->lending->borrowers`
+
+[API reference](https://www.airwallex.com/docs/api/lending/borrower)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create($lenderId)` | `POST /api/v1/lending/lenders/{lender_id}/borrowers/create` | Create a Borrower |
+| `all($lenderId)` | `GET /api/v1/lending/lenders/{lender_id}/borrowers` | List all Borrowers for This Lender |
+| `retrieve($lenderId, $borrowerId)` | `GET /api/v1/lending/lenders/{lender_id}/borrowers/{borrower_id}` | List all Borrower Details |
+| `update($lenderId, $borrowerId)` | `POST /api/v1/lending/lenders/{lender_id}/borrowers/{borrower_id}/update` | Update Borrower Settings |
+
+### `$airwallex->lending->lenders`
+
+[API reference](https://www.airwallex.com/docs/api/lending/lender)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `retrieve($lenderId)` | `GET /api/v1/lending/lenders/{lender_id}` | List all Lender Details |
+
 ## Payments
 
 ### `$airwallex->payments->config`
@@ -816,7 +900,7 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| `lookupBin()` | `GET /api/v1/pa/reference/bin/lookup` | Look up BIN details for a card number |
+| `lookupBin()` | `GET /api/v1/pa/reference/bin/lookup` | Look up BIN details for a card number. Pass the card number in the x-pan header via $opts['headers'] |
 
 ### `$airwallex->payments->settlementRecords`
 
@@ -981,6 +1065,15 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | `release($id)` | `POST /api/v1/psp_settlement_splits/{id}/release` | Release a PSP settlement split |
 | `cancel($id)` | `POST /api/v1/psp_settlement_splits/{id}/cancel` | Cancel a PSP settlement split |
 
+### `$airwallex->scale->settlementReports`
+
+[API reference](https://www.airwallex.com/docs/api/scalesettlements/scalesettlements)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `prepare()` | `POST /api/v1/settlement_reports/prepare` | Create a Batch Report |
+| `retrieve($settlementReportId)` | `GET /api/v1/settlement_reports/{settlement_report_id}` | Retrieve a Settlement Report |
+
 ## Simulation
 
 ### `$airwallex->simulation->accounts`
@@ -1085,3 +1178,64 @@ Every endpoint the SDK wraps, generated from `codegen/spec.json`. Path parameter
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | `transition($id)` | `POST /api/v1/simulation/transfers/{id}/transition` | Transition a transfer status |
+
+## Spend
+
+### `$airwallex->spend->bills`
+
+[API reference](https://www.airwallex.com/docs/api/spend/bills)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/spend/bills/create` | Create a Bill |
+| `retrieve($id)` | `GET /api/v1/spend/bills/{id}` | Retrieve a Bill |
+| `all()` | `GET /api/v1/spend/bills` | List all Bills |
+| `markAsPaid($id)` | `POST /api/v1/spend/bills/{id}/mark_as_paid` | Mark Bill As Paid |
+| `sync($id)` | `POST /api/v1/spend/bills/{id}/sync` | Update Bill Sync Status |
+
+### `$airwallex->spend->expenses`
+
+[API reference](https://www.airwallex.com/docs/api/spend/expenses)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `retrieve($id)` | `GET /api/v1/spend/expenses/{id}` | Retrieve an Expense |
+| `all()` | `GET /api/v1/spend/expenses` | List all Expenses |
+| `sync($id)` | `POST /api/v1/spend/expenses/{id}/sync` | Update Expense Sync Status |
+
+### `$airwallex->spend->purchaseOrders`
+
+[API reference](https://www.airwallex.com/docs/api/spend/purchase_orders)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/spend/purchase_orders/create` | Create a Purchase Order |
+| `retrieve($id)` | `GET /api/v1/spend/purchase_orders/{id}` | Retrieve a Purchase Order |
+| `all()` | `GET /api/v1/spend/purchase_orders` | List all Purchase Orders |
+| `sync($id)` | `POST /api/v1/spend/purchase_orders/{id}/sync` | Update Purchase Order Sync Status |
+
+### `$airwallex->spend->reimbursementReports`
+
+[API reference](https://www.airwallex.com/docs/api/spend/reimbursements)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `retrieveReimbursement($id, $reimbursementId)` | `GET /api/v1/spend/reimbursement_reports/{id}/reimbursements/{reimbursement_id}` | Retrieve a Reimbursement |
+| `retrieve($id)` | `GET /api/v1/spend/reimbursement_reports/{id}` | Retrieve a Reimbursement Report |
+| `retrieveTransfer($id, $transferId)` | `GET /api/v1/spend/reimbursement_reports/{id}/transfers/{transfer_id}` | Retrieve a Reimbursement Report Transfer |
+| `allReimbursements($id)` | `GET /api/v1/spend/reimbursement_reports/{id}/reimbursements` | List all Reimbursements |
+| `all()` | `GET /api/v1/spend/reimbursement_reports` | List all Reimbursement Reports |
+| `sync($id)` | `POST /api/v1/spend/reimbursement_reports/{id}/sync` | Update Reimbursement Report Sync Status |
+| `syncTransfer($id, $transferId)` | `POST /api/v1/spend/reimbursement_reports/{id}/transfers/{transfer_id}/sync` | Update Reimbursement Report Transfer Sync Status |
+| `markAsPaid($id)` | `POST /api/v1/spend/reimbursement_reports/{id}/mark_as_paid` | Mark Reimbursement Report As Paid |
+
+### `$airwallex->spend->vendors`
+
+[API reference](https://www.airwallex.com/docs/api/spend/vendors)
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `create()` | `POST /api/v1/spend/vendors/create` | Create a Vendor |
+| `retrieve($id)` | `GET /api/v1/spend/vendors/{id}` | Retrieve a Vendor |
+| `all()` | `GET /api/v1/spend/vendors` | List all Vendors |
+| `sync($id)` | `POST /api/v1/spend/vendors/{id}/sync` | Update Vendor Sync Status |

@@ -2,7 +2,7 @@
 
 An unofficial PHP library for the [Airwallex API](https://www.airwallex.com/docs/api), modelled on Stripe's PHP SDK.
 
-- Covers the full Airwallex API: Payments, Billing, Checkout, Payouts, Transactional FX, Issuing, Embedded Finance, Finance, Accounting, Risk and the sandbox Simulation endpoints (400+ endpoints, see [docs/SERVICES.md](docs/SERVICES.md))
+- Covers the full Airwallex API: Payments, Billing, Checkout, Payouts (incl. batch transfers and payers), Spend, Transactional FX, Issuing, Embedded Finance, Lending, Finance, Reconciliation, Accounting, Risk and the sandbox Simulation endpoints (460+ endpoints, see [docs/SERVICES.md](docs/SERVICES.md))
 - Handles authentication: exchanges your client ID and API key for an access token, caches it and refreshes it when it expires
 - Adds `request_id` idempotency keys automatically on the endpoints that take them
 - Retries connection errors, `429`s and `5xx`s with backoff (POSTs are only retried when idempotent)
@@ -57,6 +57,8 @@ $airwallex->billing->invoices->finalize('inv_...');
 $airwallex->checkout->sessions->create([...]);
 $airwallex->fx->quotes->create([...]);
 $airwallex->issuing->cards->activate('card_...');
+$airwallex->spend->bills->create([...]);
+$airwallex->batchTransfers->submit('batch_...');
 $airwallex->simulation->payments->createDispute([...]); // sandbox only
 ```
 
@@ -133,6 +135,8 @@ $airwallex->transfers->create([
 ]);
 ```
 
+Airwallex doesn't replay a reused `request_id`. It rejects it with `duplicate_request`, which the SDK throws as `IdempotencyException`. If you get one after a timeout or retry, the original request almost certainly succeeded, so look the resource up (e.g. by `merchant_order_id`) rather than creating it again.
+
 Set `'auto_request_id' => false` in the config to turn this off.
 
 ## Errors
@@ -143,8 +147,9 @@ API errors throw a subclass of `WPZinc\Airwallex\Exception\ApiErrorException`:
 | --- | --- |
 | `InvalidRequestException` | 400 |
 | `AuthenticationException` | 401 |
-| `PermissionException` | 403 |
+| `PermissionException` | 403, or 401 "Insufficient permissions" (scoped key missing a permission) |
 | `NotFoundException` | 404 |
+| `IdempotencyException` | 400 `duplicate_request` (extends `InvalidRequestException`) |
 | `ConflictException` | 409 |
 | `RateLimitException` | 429 |
 | `ServerException` | 5xx |
@@ -163,6 +168,7 @@ try {
     $e->getAirwallexCode(); // "invalid_argument"
     $e->getSource();        // "first_name"
     $e->getDetails();
+    $e->getErrors();        // details.errors, e.g. [['code' => '001', 'source' => 'entity_type']]
     $e->getHttpStatus();    // 400
 } catch (ApiErrorException $e) {
     // anything else from the API
@@ -278,6 +284,23 @@ $result = $airwallex->rawRequest('post', '/api/v1/some/new_endpoint/create', ['f
 composer install
 composer test
 ```
+
+### Sandbox tests
+
+`tests/Sandbox` runs real requests against the Airwallex sandbox: payments, billing checkout, pagination, webhooks, file uploads and errors. Create a scoped sandbox API key, then add a `.env` (git-ignored):
+
+```
+AIRWALLEX_CLIENT_ID=...
+AIRWALLEX_API_KEY=...
+AIRWALLEX_ACCOUNT_ID=...
+```
+
+```bash
+vendor/bin/phpunit --testsuite sandbox
+php tests/Sandbox/sweep.php   # calls every parameterless GET endpoint and prints the result
+```
+
+The default `composer test` only runs the offline unit suite.
 
 The service classes, resource classes and [docs/SERVICES.md](docs/SERVICES.md) are generated from [codegen/spec.json](codegen/spec.json). To add or rename an endpoint, edit the spec and run `composer generate`. See [codegen/README.md](codegen/README.md).
 

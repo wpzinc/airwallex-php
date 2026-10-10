@@ -21,10 +21,12 @@ $namespaces = [
     'Finance'    => ['finance', 'Finance'],
     'Fx'         => ['fx', 'Transactional FX'],
     'Issuing'    => ['issuing', 'Issuing'],
+    'Lending'    => ['lending', 'Lending'],
     'Payments'   => ['payments', 'Payment Acceptance (additional resources)'],
     'Risk'       => ['risk', 'Risk'],
     'Scale'      => ['scale', 'Embedded Finance (Scale)'],
     'Simulation' => ['simulation', 'Simulation (sandbox only)'],
+    'Spend'      => ['spend', 'Spend'],
 ];
 
 $generated = [];

@@ -158,6 +158,71 @@
     },
     {
       "namespace": "",
+      "property": "autoPayments",
+      "class": "AutoPaymentService",
+      "resource": "AutoPayment",
+      "doc": "https://www.airwallex.com/docs/api/auto_payments/auto_payments",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/auto_payments/create",
+          "summary": "Create an Auto Payment",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/auto_payments/{id}",
+          "summary": "Retrieve an Auto Payment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/auto_payments",
+          "summary": "List all Auto Payments",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/auto_payments/{id}/update",
+          "summary": "Update an Auto Payment",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "enable",
+          "http": "POST",
+          "path": "/api/v1/auto_payments/{id}/enable",
+          "summary": "Enable an Auto Payment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "disable",
+          "http": "POST",
+          "path": "/api/v1/auto_payments/{id}/disable",
+          "summary": "Disable an Auto Payment",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allTasks",
+          "http": "GET",
+          "path": "/api/v1/auto_payments/task",
+          "summary": "List all Auto Payment Tasks",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
       "property": "balances",
       "class": "BalanceService",
       "resource": "Balance",
@@ -176,6 +241,87 @@
           "http": "GET",
           "path": "/api/v1/balances/history",
           "summary": "Retrieve balance history",
+          "returns": "collection",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "batchTransfers",
+      "class": "BatchTransferService",
+      "resource": "BatchTransfer",
+      "doc": "https://www.airwallex.com/docs/api/payouts/batch_transfers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/create",
+          "summary": "Create a Batch Transfer",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/batch_transfers/{id}",
+          "summary": "Retrieve a Batch Transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/batch_transfers",
+          "summary": "List all Batch Transfers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "addItems",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/{id}/add_items",
+          "summary": "Add Items To a Batch",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "quote",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/{id}/quote",
+          "summary": "Quote a Batch Transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "submit",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/{id}/submit",
+          "summary": "Submit a Batch Transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/{id}/delete",
+          "summary": "Delete a Batch Transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "deleteItems",
+          "http": "POST",
+          "path": "/api/v1/batch_transfers/{id}/delete_items",
+          "summary": "Delete Items Within a Batch",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allItems",
+          "http": "GET",
+          "path": "/api/v1/batch_transfers/{id}/items",
+          "summary": "List all Items Within a Batch",
           "returns": "collection",
           "request_id": "none"
         }
@@ -745,6 +891,63 @@
     },
     {
       "namespace": "",
+      "property": "payers",
+      "class": "PayerService",
+      "resource": "Payer",
+      "doc": "https://www.airwallex.com/docs/api/payouts/payers",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/payers/create",
+          "summary": "Create a Payer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/payers/{id}",
+          "summary": "Retrieve a Payer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/payers",
+          "summary": "List all Payers",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/payers/{id}/update",
+          "summary": "Update an Existing Payer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "validate",
+          "http": "POST",
+          "path": "/api/v1/payers/validate",
+          "summary": "Validate a Payer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "delete",
+          "http": "POST",
+          "path": "/api/v1/payers/{id}/delete",
+          "summary": "Delete an Existing Payer",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
       "property": "paymentAttempts",
       "class": "PaymentAttemptService",
       "resource": "PaymentAttempt",
@@ -1087,6 +1290,47 @@
     },
     {
       "namespace": "",
+      "property": "reconciliation",
+      "class": "ReconciliationService",
+      "resource": null,
+      "doc": "https://www.airwallex.com/docs/api/reconciliation/reconciliation",
+      "methods": [
+        {
+          "name": "allBalances",
+          "http": "GET",
+          "path": "/api/v1/tc/balances",
+          "summary": "List all Balances",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "requestBalances",
+          "http": "POST",
+          "path": "/api/v1/tc/balances/requests",
+          "summary": "Retrieve the Balances in Batch",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allTransactions",
+          "http": "GET",
+          "path": "/api/v1/tc/transactions",
+          "summary": "List all Transactions",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "requestTransactions",
+          "http": "POST",
+          "path": "/api/v1/tc/transactions/requests",
+          "summary": "Retrieve the Transactions in Batch",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
       "property": "reference",
       "class": "ReferenceService",
       "resource": null,
@@ -1109,11 +1353,11 @@
           "request_id": "none"
         },
         {
-          "name": "allSupportedCurrencies",
+          "name": "retrieveSupportedCurrencies",
           "http": "GET",
           "path": "/api/v1/reference/supported_currencies",
           "summary": "Supported currencies",
-          "returns": "collection",
+          "returns": "object",
           "request_id": "none"
         },
         {
@@ -1172,6 +1416,31 @@
           "summary": "Retrieve a refund",
           "returns": "object",
           "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "",
+      "property": "reserves",
+      "class": "ReserveService",
+      "resource": "Reserve",
+      "doc": "https://www.airwallex.com/docs/api/reserves/reserves",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/reserves/create",
+          "summary": "Create a Reserve",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "unreserve",
+          "http": "POST",
+          "path": "/api/v1/reserves/unreserve",
+          "summary": "Create an Unreserve",
+          "returns": "object",
+          "request_id": "required"
         }
       ]
     },
@@ -2920,6 +3189,64 @@
       ]
     },
     {
+      "namespace": "Lending",
+      "property": "borrowers",
+      "class": "BorrowerService",
+      "resource": "Borrower",
+      "doc": "https://www.airwallex.com/docs/api/lending/borrower",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/lending/lenders/{lender_id}/borrowers/create",
+          "summary": "Create a Borrower",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/lending/lenders/{lender_id}/borrowers",
+          "summary": "List all Borrowers for This Lender",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/lending/lenders/{lender_id}/borrowers/{borrower_id}",
+          "summary": "List all Borrower Details",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "update",
+          "http": "POST",
+          "path": "/api/v1/lending/lenders/{lender_id}/borrowers/{borrower_id}/update",
+          "summary": "Update Borrower Settings",
+          "returns": "object",
+          "request_id": "required"
+        }
+      ]
+    },
+    {
+      "namespace": "Lending",
+      "property": "lenders",
+      "class": "LenderService",
+      "resource": "Lender",
+      "doc": "https://www.airwallex.com/docs/api/lending/lender",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/lending/lenders/{lender_id}",
+          "summary": "List all Lender Details",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
       "namespace": "Payments",
       "property": "config",
       "class": "ConfigService",
@@ -3152,7 +3479,7 @@
           "name": "lookupBin",
           "http": "GET",
           "path": "/api/v1/pa/reference/bin/lookup",
-          "summary": "Look up BIN details for a card number",
+          "summary": "Look up BIN details for a card number. Pass the card number in the x-pan header via $opts['headers']",
           "returns": "object",
           "request_id": "none"
         }
@@ -3726,6 +4053,31 @@
       ]
     },
     {
+      "namespace": "Scale",
+      "property": "settlementReports",
+      "class": "SettlementReportService",
+      "resource": "SettlementReport",
+      "doc": "https://www.airwallex.com/docs/api/scalesettlements/scalesettlements",
+      "methods": [
+        {
+          "name": "prepare",
+          "http": "POST",
+          "path": "/api/v1/settlement_reports/prepare",
+          "summary": "Create a Batch Report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/settlement_reports/{settlement_report_id}",
+          "summary": "Retrieve a Settlement Report",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
       "namespace": "Simulation",
       "property": "accounts",
       "class": "AccountService",
@@ -4074,6 +4426,243 @@
           "http": "POST",
           "path": "/api/v1/simulation/transfers/{id}/transition",
           "summary": "Transition a transfer status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Spend",
+      "property": "bills",
+      "class": "BillService",
+      "resource": "Bill",
+      "doc": "https://www.airwallex.com/docs/api/spend/bills",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/spend/bills/create",
+          "summary": "Create a Bill",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/spend/bills/{id}",
+          "summary": "Retrieve a Bill",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/spend/bills",
+          "summary": "List all Bills",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "markAsPaid",
+          "http": "POST",
+          "path": "/api/v1/spend/bills/{id}/mark_as_paid",
+          "summary": "Mark Bill As Paid",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "sync",
+          "http": "POST",
+          "path": "/api/v1/spend/bills/{id}/sync",
+          "summary": "Update Bill Sync Status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Spend",
+      "property": "expenses",
+      "class": "ExpenseService",
+      "resource": "Expense",
+      "doc": "https://www.airwallex.com/docs/api/spend/expenses",
+      "methods": [
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/spend/expenses/{id}",
+          "summary": "Retrieve an Expense",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/spend/expenses",
+          "summary": "List all Expenses",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "sync",
+          "http": "POST",
+          "path": "/api/v1/spend/expenses/{id}/sync",
+          "summary": "Update Expense Sync Status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Spend",
+      "property": "purchaseOrders",
+      "class": "PurchaseOrderService",
+      "resource": "PurchaseOrder",
+      "doc": "https://www.airwallex.com/docs/api/spend/purchase_orders",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/spend/purchase_orders/create",
+          "summary": "Create a Purchase Order",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/spend/purchase_orders/{id}",
+          "summary": "Retrieve a Purchase Order",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/spend/purchase_orders",
+          "summary": "List all Purchase Orders",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "sync",
+          "http": "POST",
+          "path": "/api/v1/spend/purchase_orders/{id}/sync",
+          "summary": "Update Purchase Order Sync Status",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Spend",
+      "property": "reimbursementReports",
+      "class": "ReimbursementReportService",
+      "resource": "ReimbursementReport",
+      "doc": "https://www.airwallex.com/docs/api/spend/reimbursements",
+      "methods": [
+        {
+          "name": "retrieveReimbursement",
+          "http": "GET",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/reimbursements/{reimbursement_id}",
+          "summary": "Retrieve a Reimbursement",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/spend/reimbursement_reports/{id}",
+          "summary": "Retrieve a Reimbursement Report",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "retrieveTransfer",
+          "http": "GET",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/transfers/{transfer_id}",
+          "summary": "Retrieve a Reimbursement Report Transfer",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "allReimbursements",
+          "http": "GET",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/reimbursements",
+          "summary": "List all Reimbursements",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/spend/reimbursement_reports",
+          "summary": "List all Reimbursement Reports",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "sync",
+          "http": "POST",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/sync",
+          "summary": "Update Reimbursement Report Sync Status",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "syncTransfer",
+          "http": "POST",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/transfers/{transfer_id}/sync",
+          "summary": "Update Reimbursement Report Transfer Sync Status",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "markAsPaid",
+          "http": "POST",
+          "path": "/api/v1/spend/reimbursement_reports/{id}/mark_as_paid",
+          "summary": "Mark Reimbursement Report As Paid",
+          "returns": "object",
+          "request_id": "none"
+        }
+      ]
+    },
+    {
+      "namespace": "Spend",
+      "property": "vendors",
+      "class": "VendorService",
+      "resource": "Vendor",
+      "doc": "https://www.airwallex.com/docs/api/spend/vendors",
+      "methods": [
+        {
+          "name": "create",
+          "http": "POST",
+          "path": "/api/v1/spend/vendors/create",
+          "summary": "Create a Vendor",
+          "returns": "object",
+          "request_id": "required"
+        },
+        {
+          "name": "retrieve",
+          "http": "GET",
+          "path": "/api/v1/spend/vendors/{id}",
+          "summary": "Retrieve a Vendor",
+          "returns": "object",
+          "request_id": "none"
+        },
+        {
+          "name": "all",
+          "http": "GET",
+          "path": "/api/v1/spend/vendors",
+          "summary": "List all Vendors",
+          "returns": "collection",
+          "request_id": "none"
+        },
+        {
+          "name": "sync",
+          "http": "POST",
+          "path": "/api/v1/spend/vendors/{id}/sync",
+          "summary": "Update Vendor Sync Status",
           "returns": "object",
           "request_id": "none"
         }

@@ -13,7 +13,9 @@ namespace WPZinc\Airwallex\Service;
  * @property-read Accounting\AccountingServiceFactory $accounting
  * @property-read AccountService $accounts
  * @property-read AuthenticationService $authentication
+ * @property-read AutoPaymentService $autoPayments
  * @property-read BalanceService $balances
+ * @property-read BatchTransferService $batchTransfers
  * @property-read BeneficiaryService $beneficiaries
  * @property-read Billing\BillingServiceFactory $billing
  * @property-read ChargeService $charges
@@ -29,7 +31,9 @@ namespace WPZinc\Airwallex\Service;
  * @property-read Fx\FxServiceFactory $fx
  * @property-read GlobalAccountService $globalAccounts
  * @property-read Issuing\IssuingServiceFactory $issuing
+ * @property-read Lending\LendingServiceFactory $lending
  * @property-read LinkedAccountService $linkedAccounts
+ * @property-read PayerService $payers
  * @property-read PaymentAttemptService $paymentAttempts
  * @property-read PaymentConsentService $paymentConsents
  * @property-read PaymentDisputeService $paymentDisputes
@@ -37,12 +41,15 @@ namespace WPZinc\Airwallex\Service;
  * @property-read PaymentLinkService $paymentLinks
  * @property-read PaymentMethodService $paymentMethods
  * @property-read Payments\PaymentsServiceFactory $payments
+ * @property-read ReconciliationService $reconciliation
  * @property-read ReferenceService $reference
  * @property-read RefundService $refunds
+ * @property-read ReserveService $reserves
  * @property-read Risk\RiskServiceFactory $risk
  * @property-read Scale\ScaleServiceFactory $scale
  * @property-read SecurityAuditLogService $securityAuditLogs
  * @property-read Simulation\SimulationServiceFactory $simulation
+ * @property-read Spend\SpendServiceFactory $spend
  * @property-read TransferService $transfers
  * @property-read WebhookEndpointService $webhooks
  */
@@ -55,7 +62,9 @@ class CoreServiceFactory extends AbstractServiceFactory
             'accounting'                => Accounting\AccountingServiceFactory::class,
             'accounts'                  => AccountService::class,
             'authentication'            => AuthenticationService::class,
+            'autoPayments'              => AutoPaymentService::class,
             'balances'                  => BalanceService::class,
+            'batchTransfers'            => BatchTransferService::class,
             'beneficiaries'             => BeneficiaryService::class,
             'billing'                   => Billing\BillingServiceFactory::class,
             'charges'                   => ChargeService::class,
@@ -71,7 +80,9 @@ class CoreServiceFactory extends AbstractServiceFactory
             'fx'                        => Fx\FxServiceFactory::class,
             'globalAccounts'            => GlobalAccountService::class,
             'issuing'                   => Issuing\IssuingServiceFactory::class,
+            'lending'                   => Lending\LendingServiceFactory::class,
             'linkedAccounts'            => LinkedAccountService::class,
+            'payers'                    => PayerService::class,
             'paymentAttempts'           => PaymentAttemptService::class,
             'paymentConsents'           => PaymentConsentService::class,
             'paymentDisputes'           => PaymentDisputeService::class,
@@ -79,12 +90,15 @@ class CoreServiceFactory extends AbstractServiceFactory
             'paymentLinks'              => PaymentLinkService::class,
             'paymentMethods'            => PaymentMethodService::class,
             'payments'                  => Payments\PaymentsServiceFactory::class,
+            'reconciliation'            => ReconciliationService::class,
             'reference'                 => ReferenceService::class,
             'refunds'                   => RefundService::class,
+            'reserves'                  => ReserveService::class,
             'risk'                      => Risk\RiskServiceFactory::class,
             'scale'                     => Scale\ScaleServiceFactory::class,
             'securityAuditLogs'         => SecurityAuditLogService::class,
             'simulation'                => Simulation\SimulationServiceFactory::class,
+            'spend'                     => Spend\SpendServiceFactory::class,
             'transfers'                 => TransferService::class,
             'webhooks'                  => WebhookEndpointService::class,
         ];

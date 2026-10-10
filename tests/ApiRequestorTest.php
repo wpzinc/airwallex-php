@@ -12,6 +12,7 @@ use WPZinc\Airwallex\Exception\AuthenticationException;
 use WPZinc\Airwallex\Exception\InvalidArgumentException;
 use WPZinc\Airwallex\Exception\InvalidRequestException;
 use WPZinc\Airwallex\Exception\NotFoundException;
+use WPZinc\Airwallex\Exception\PermissionException;
 use WPZinc\Airwallex\Exception\RateLimitException;
 use WPZinc\Airwallex\Exception\ServerException;
 use WPZinc\Airwallex\Resource\PaymentIntent;
@@ -188,6 +189,49 @@ final class ApiRequestorTest extends TestCase
             $this->assertSame(['min' => 2], $e->getDetails());
             $this->assertSame(400, $e->getHttpStatus());
         }
+    }
+
+    public function testValidationErrors(): void
+    {
+        $this->http->queue(400, ['code' => 'validation_failed', 'message' => 'The request failed our schema validation.', 'details' => ['errors' => [['code' => '001', 'source' => 'entity_type']]]]);
+
+        try {
+            $this->client->beneficiaries->allSupportedFinancialInstitutions();
+            $this->fail('Expected InvalidRequestException');
+        } catch (InvalidRequestException $e) {
+            $this->assertSame([['code' => '001', 'source' => 'entity_type']], $e->getErrors());
+        }
+    }
+
+    public function testDuplicateRequestIdIsIdempotencyException(): void
+    {
+        $this->http->queue(400, ['code' => 'duplicate_request', 'message' => 'The request ID abc has been used previously.']);
+
+        $this->expectException(\WPZinc\Airwallex\Exception\IdempotencyException::class);
+        $this->client->paymentIntents->create(['request_id' => 'abc']);
+    }
+
+    public function testProblemJsonError(): void
+    {
+        $this->http->queue(400, ['type' => 'about:blank', 'title' => 'Bad Request', 'status' => 400, 'detail' => "Required header 'x-pan' is not present."]);
+
+        $this->expectException(InvalidRequestException::class);
+        $this->expectExceptionMessage("Required header 'x-pan' is not present.");
+        $this->client->payments->referenceData->lookupBin();
+    }
+
+    public function testMissingPermissionIsPermissionExceptionWithoutRelogin(): void
+    {
+        $this->http->queue(401, ['code' => 'unauthorized', 'message' => 'Insufficient permissions']);
+
+        try {
+            $this->client->connectedStores->all();
+            $this->fail('Expected PermissionException');
+        } catch (PermissionException $e) {
+            $this->assertSame(401, $e->getHttpStatus());
+        }
+        $this->assertSame(1, $this->http->logins);
+        $this->assertCount(1, $this->http->apiRequests());
     }
 
     public function testNotFoundWithEmptyBody(): void

@@ -16,7 +16,7 @@ use WPZinc\Airwallex\Service\AbstractService;
 class ReferenceDataService extends AbstractService
 {
     /**
-     * Look up BIN details for a card number.
+     * Look up BIN details for a card number. Pass the card number in the x-pan header via $opts['headers'].
      *
      * GET /api/v1/pa/reference/bin/lookup
      *
